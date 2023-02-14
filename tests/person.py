@@ -11,7 +11,7 @@ class Person:
         print(f"Hi there you told me to talk")
 
     def walk(self):
-        print(f"Just imagine I'm walking")
+        print(f"Hi! {self.__name} here. Just imagine I'm walking")
 
     def __str__(self):
         return f"This person is called {self.__name} and is {self.__age} years \
@@ -22,10 +22,9 @@ def main():
 
     person1 = Person("Tuva", 23, 178, "male")
 
-    print(person1)
-
-    person1.talk()
-
     person1.walk()
 
+    print(dir(person1))
+
+    
 main()
