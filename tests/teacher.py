@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
-class Teacher:
+from user import User
 
-    def __init__(self, name, email, username, workid):
-        self.__name = name
-        self.__email = email
-        self.__username = username
-        self.__workid = workid
+class Teacher(User):
+
+    def __init__(self, name, email, username, work_id):
+        super().__init__(name, email, username)
+        self.__work_id = work_id
 
     def introduce(self):
         print(f"Hi there! My name is {self.__name} and I am a teacher")
