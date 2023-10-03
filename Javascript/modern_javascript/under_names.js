@@ -36,6 +36,10 @@ const people = [
   },   
 ];
 
-const youngPeople = people.filter((person) => {
-  person.age <= 25);
+const youngPeople = people
+  .filter((person) => person.age <= 25)
+  .map((person) => ({
+    name: person.firstName + ' ' + person.lastName,
+    email: person.email,
+  }));
 console.log(youngPeople);
