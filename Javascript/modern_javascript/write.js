@@ -1,11 +1,16 @@
-const { readFileSync, writeFileSync } = require('fs')
+const { readFile, writeFile } = require('fs')
 
-
-const first = readFileSync('/home/vagrant/python_learning/Javascript/modern_javascript/write.js', 'utf8')
-const second = readFileSync('/home/vagrant/python_learning/Javascript/modern_javascript/write.js', 'utf8')
-
-writeFileSync(
-	'./result-sync.text',
-	`Here is the result : ${first} ${second}`,
-	{ flag: 'a' }
-)
+readFile('./file.js', 'utf8', (err, result) => {
+	if (err) {
+		console.log(err)
+		return
+	}
+	const first = result
+	readFile('./file.js', 'utf8', (err, result) => {
+		if (err) {
+			console.log(err)
+			return
+		}
+		console.log(result)
+	})
+});
